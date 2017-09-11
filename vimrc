@@ -54,6 +54,7 @@ set guifont=Consolas:h11,DejaVu\ Sans\ Mono\ 11
 set guioptions+=ae
 set guioptions-=t
 set splitright
+set nobomb
 set viminfo+=n~/.viminfo " for windows (i really hate _viminfo)
 if has('gui_running') | set columns=89 | endif
 
@@ -139,6 +140,9 @@ function! SrtToVtt() " i like screwing with captions
     call append(0, ["WEBVTT", ""])
     global/^\d\+$/d
     %substitute/\(\d\d:\d\d:\d\d\),\(\d\d\d\)/\1.\2/g
+    set nobomb fileformat=unix fileencoding=utf-8
+    call StripTrailingSpace()
+    call StripLeadingSpace()
 endfunction
 autocmd BufWrite *.py     :call StripTrailingSpace()
 autocmd BufWrite *.coffee :call StripTrailingSpace()
