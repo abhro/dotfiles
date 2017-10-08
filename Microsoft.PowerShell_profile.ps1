@@ -1,5 +1,5 @@
 Set-StrictMode -Version Latest
-Set-PSReadlineOption -HistorySaveStyle SaveNothing -BellStyle None -HistoryNoDuplicates
+Set-PSReadlineOption -HistorySaveStyle SaveNothing -BellStyle None -HistoryNoDuplicates -ShowToolTips
 
 function Get-Types   # doesn't provide any real value. just to play around with.
 {
