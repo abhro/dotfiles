@@ -1,4 +1,5 @@
 Set-StrictMode -Version Latest
+Set-PSReadlineOption -HistorySaveStyle SaveNothing -BellStyle None -HistoryNoDuplicates
 
 function Get-Types   # doesn't provide any real value. just to play around with.
 {
