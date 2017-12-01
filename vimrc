@@ -59,7 +59,7 @@ set viminfo+=n~/.viminfo " for windows (i really hate _viminfo)
 if has('gui_running') | set columns=89 | endif
 
 set colorcolumn=80 textwidth=80
-set linebreak autoindent smartindent
+set autoindent smartindent
 set expandtab smarttab nojoinspaces
 set shiftwidth=4 tabstop=4 " 1 tab is 4 spaces
 set softtabstop=4 " number of spaces in tab when editing
