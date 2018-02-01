@@ -1,5 +1,6 @@
 Set-StrictMode -Version Latest
 Set-PSReadlineOption -HistorySaveStyle SaveNothing -BellStyle None -HistoryNoDuplicates -ShowToolTips
+Set-PSReadlineKeyHandler -Key Tab -Function Complete
 
 function Get-Types   # doesn't provide any real value. just to play around with.
 {
@@ -23,12 +24,12 @@ function Invoke-Speech
 
 function idle
 {
-    pythonw.exe -m idlelib $args
+    pyw.exe -m idlelib $args
 }
 
 function pydoc
 {
-    python.exe -m pydoc $args
+    py.exe -m pydoc $args
 }
 
 New-Alias -Name Out-Voice -Value Invoke-Speech
