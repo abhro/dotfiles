@@ -9,7 +9,7 @@
 " configure vundle
 set nocompatible
 filetype off
-set runtimepath+=~/.vim/bundle/Vundle.vim
+set runtimepath+=~/.vim/bundle/vundle.vim
 call vundle#begin()
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'altercation/vim-colors-solarized'
