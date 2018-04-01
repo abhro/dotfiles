@@ -21,6 +21,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'mebus/jellybeans.vim'
+Plugin 'peterhoeg/vim-qml'
 Plugin 'pprovost/vim-ps1'
 Plugin 'romainl/apprentice'
 Plugin 'rust-lang/rust.vim'
@@ -109,21 +110,18 @@ nmap k gk
 vmap j gj
 vmap k gk
 
-" make Ctrl-S save
+" make ^S save
 nnoremap <silent> <C-s> :update<CR>
 inoremap <silent> <C-s> <Esc>:update<CR>a
 
-autocmd Filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd Filetype php  setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd Filetype ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd Filetype sh   setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd FileType text setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd Filetype xml  setlocal tabstop=2 softtabstop=2 shiftwidth=2
-if has('gui_running')
-    autocmd Filetype ruby colorscheme railscasts
-else
-    autocmd Filetype ruby colorscheme apprentice
-endif
+autocmd Filetype html       setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype php        setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype ruby       setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype sh         setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd FileType text       setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype xhtml      setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype xml        setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " delete trailing white space on save, useful for python and coffeescript
 function! StripTrailingSpace()
