@@ -1,6 +1,9 @@
 Set-StrictMode -Version Latest
 Set-PSReadlineOption -HistorySaveStyle SaveNothing -BellStyle None -HistoryNoDuplicates -ShowToolTips
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
+# Extra keybindings for PowerShell Core on Linux
+#Set-PSReadlineKeyHandler -Key 'Ctrl+LeftArrow' -Function ShellBackwardWord
+#Set-PSReadlineKeyHandler -Key 'Ctrl+RightArrow' -Function ShellForwardWord
 
 function Get-Types   # doesn't provide any real value. just to play around with.
 {
