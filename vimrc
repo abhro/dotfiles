@@ -26,11 +26,11 @@ Plugin 'pprovost/vim-ps1'
 Plugin 'romainl/apprentice'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
 Plugin 'sjl/badwolf'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'vundlevim/vundle.vim'
 call vundle#end()
 
