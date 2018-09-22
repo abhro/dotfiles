@@ -57,7 +57,7 @@ set guioptions-=t
 set splitright
 set nobomb
 set viminfo+=n~/.viminfo " for windows (i really hate _viminfo)
-if has('gui_running') | set columns=89 | endif
+if has('gui_running') | set columns=95 | endif
 
 set colorcolumn=80 textwidth=80
 set autoindent smartindent
@@ -100,9 +100,10 @@ nmap <C-h> :wincmd h<CR>
 nmap <C-j> :wincmd j<CR>
 nmap <C-k> :wincmd k<CR>
 nmap <C-l> :wincmd l<CR>
-" copy/paste from and to global buffer
+" cut/copy/paste from and to global buffer
 inoremap <C-v> <C-r>+
 vnoremap <C-c> "+y
+vnoremap <C-x> "+x
 
 " make scrolling through wrapped lines easier
 nmap j gj
