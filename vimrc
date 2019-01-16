@@ -115,6 +115,7 @@ vmap k gk
 nnoremap <silent> <C-s> :update<CR>
 inoremap <silent> <C-s> <Esc>:update<CR>a
 
+autocmd Filetype css        setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype html       setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype javascript setlocal tabstop=2 softtabstop=2 shiftwidth=2
 autocmd Filetype php        setlocal tabstop=2 softtabstop=2 shiftwidth=2
@@ -126,22 +127,22 @@ autocmd Filetype xml        setlocal tabstop=2 softtabstop=2 shiftwidth=2
 
 " delete trailing white space on save, useful for python and coffeescript
 function! StripTrailingSpace()
-    execute "normal mz"
-    %substitute/\s\+$//ge
-    execute "normal `z"
+  execute "normal mz"
+  %substitute/\s\+$//ge
+  execute "normal `z"
 endfunction
 function! StripLeadingSpace()
-    execute "normal mz"
-    %substitute/^\s\+//ge
-    execute "normal `z"
+  execute "normal mz"
+  %substitute/^\s\+//ge
+  execute "normal `z"
 endfunction
 function! SrtToVtt() " i like screwing with captions
-    call append(0, ["WEBVTT", ""])
-    global/^\d\+$/d
-    %substitute/\(\d\d:\d\d:\d\d\),\(\d\d\d\)/\1.\2/g
-    set nobomb fileformat=unix fileencoding=utf-8
-    call StripTrailingSpace()
-    call StripLeadingSpace()
+  call append(0, ["WEBVTT", ""])
+  global/^\d\+$/d
+  %substitute/\v(\d\d:\d\d:\d\d),(\d\d\d)/\1.\2/g
+  set nobomb fileformat=unix fileencoding=utf-8
+  call StripTrailingSpace()
+  call StripLeadingSpace()
 endfunction
 autocmd BufWrite *.py     :call StripTrailingSpace()
 autocmd BufWrite *.coffee :call StripTrailingSpace()
