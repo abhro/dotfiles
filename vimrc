@@ -51,13 +51,17 @@ set t_Co=256
 let g:solarized_termcolors=256
 set background=light
 colorscheme badwolf
-set guifont=Consolas:h11,DejaVu\ Sans\ Mono\ 11
+if has("win32")
+  set guifont=Consolas:h11
+else
+  set guifont=Hack\ 13
+endif
 set guioptions+=ae
 set guioptions-=t
 set splitright
 set nobomb
 set viminfo+=n~/.viminfo " for windows (i really hate _viminfo)
-if has('gui_running') | set columns=95 | endif
+if has('gui_running') | set columns=95 lines=28 | endif
 
 set colorcolumn=80 textwidth=80
 set autoindent smartindent
