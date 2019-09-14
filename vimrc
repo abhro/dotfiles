@@ -27,6 +27,7 @@ Plugin 'romainl/apprentice'
 Plugin 'rust-lang/rust.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/badwolf'
+Plugin 'tikhomirov/vim-glsl'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
@@ -66,7 +67,7 @@ if has('gui_running') | set columns=95 lines=28 | endif
 set colorcolumn=80 textwidth=80
 set autoindent smartindent
 set expandtab smarttab nojoinspaces
-set shiftwidth=4 tabstop=4 " 1 tab is 4 spaces
+set shiftwidth=4
 set softtabstop=4 " number of spaces in tab when editing
 set list listchars=tab:>·,trail:·,nbsp:. " for indentation convenience
 
@@ -99,21 +100,27 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 " don't dedent comments
 inoremap # X<BS>#
 
+" tab navigation
+map <C-Tab>     :tabnext<CR>
+map <C-S-Tab>   :tabprevious<CR>
+map <C-t>       :tabnew<CR>
+
 " scroll through split windows
-nmap <C-h> :wincmd h<CR>
-nmap <C-j> :wincmd j<CR>
-nmap <C-k> :wincmd k<CR>
-nmap <C-l> :wincmd l<CR>
+nmap <C-h>      :wincmd h<CR>
+nmap <C-j>      :wincmd j<CR>
+nmap <C-k>      :wincmd k<CR>
+nmap <C-l>      :wincmd l<CR>
+
 " cut/copy/paste from and to global buffer
-inoremap <C-v> <C-r>+
-vnoremap <C-c> "+y
-vnoremap <C-x> "+x
+inoremap <C-v>  <C-r>+
+vnoremap <C-c>  "+y
+vnoremap <C-x>  "+x
 
 " make scrolling through wrapped lines easier
-nmap j gj
-nmap k gk
-vmap j gj
-vmap k gk
+nmap j          gj
+nmap k          gk
+vmap j          gj
+vmap k          gk
 
 " make ^S save
 nnoremap <silent> <C-s> :update<CR>
@@ -146,6 +153,8 @@ endfunction
 autocmd BufWrite *.py     :call StripTrailingSpace()
 autocmd BufWrite *.coffee :call StripTrailingSpace()
 
+" see https://vi.stackexchange.com/questions/3455
+autocmd BufRead * let &l:modifiable = !&readonly
 
 """" plugin configurations start here
 
@@ -157,7 +166,7 @@ let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
 map <silent> <F2> :NERDTreeToggle<CR>
 
-map <silent> <F8> :TagbarToggle<CR>
+map <silent> <F12> :TagbarToggle<CR>
 
 " Syntastic configuration
 "let g:syntastic_python_python_exec = '/usr/bin/python3'
