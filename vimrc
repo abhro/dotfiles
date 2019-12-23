@@ -13,6 +13,7 @@ set runtimepath+=~/.vim/bundle/vundle.vim
 call vundle#begin()
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'cespare/vim-toml'
 Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jpo/vim-railscasts-theme'
