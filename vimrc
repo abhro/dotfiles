@@ -127,10 +127,10 @@ vmap k          gk
 nnoremap <silent> <C-s> :update<CR>
 inoremap <silent> <C-s> <Esc>:update<CR>a
 
-autocmd Filetype css,html,json  setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd Filetype javascript,vim setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd Filetype php,ruby,sh    setlocal tabstop=2 softtabstop=2 shiftwidth=2
-autocmd Filetype text,xhtml,xml setlocal tabstop=2 softtabstop=2 shiftwidth=2
+autocmd Filetype css,html,json      setlocal softtabstop=2 shiftwidth=2
+autocmd Filetype javascript,fortran setlocal softtabstop=2 shiftwidth=2
+autocmd Filetype php,ruby,sh,vim    setlocal softtabstop=2 shiftwidth=2
+autocmd Filetype text,xhtml,xml     setlocal softtabstop=2 shiftwidth=2
 
 " delete trailing white space on save, useful for python and coffeescript
 function! StripTrailingSpace()
