@@ -71,6 +71,8 @@ set wildignore=*.a,*.o,*.pyc,*.pyo,*.git " don't search compiled files
 
 set pastetoggle=<F3> " F3 enters paste mode (solves indenting)
 
+"set clipboard=unnamedplus " use system clipboard
+
 set showcmd " show command in bottom bar
 set showmode " show if in insert, visual or replace mode
 set cursorline " highlight current line
