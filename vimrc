@@ -1,15 +1,9 @@
 " VIM 8.0 vimrc file
-" a lot of this has been copied from other vimfiles
-" i don't remember where
-" a lot of them claimed to be the coolest vimrc ever
-" if you want to go ahead and look for them by searching snippets from this
-" file, go ahead.
-" whether or not they actually are the coolest vim configs ever is up to you.
 
 " configure vundle
 set nocompatible
 filetype off
-set runtimepath+=~/.vim/bundle/vundle.vim
+set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'altercation/vim-colors-solarized'
