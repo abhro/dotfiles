@@ -2,7 +2,8 @@
 # naming this .aliases feels weird
 
 # protect and inform user
-alias cp='cp -iv' mv='mv -iv' rm='rm -iv' mkdir='mkdir -v' rmdir='rmdir -v'
+alias cp='cp -iv' mv='mv -iv' rm='rm -iv' ln='ln -v'
+alias mkdir='mkdir -v' rmdir='rmdir -v'
 alias pgrep='pgrep -af' jobs='jobs -l'
 alias chmod='chmod -c' chown='chown -c' chgrp='chgrp -c'
 
@@ -15,7 +16,6 @@ alias sudo='sudo ' xargs='xargs ' # let sudo and xargs use aliases
 alias serve='sudo python3 -m http.server 80'
 alias :q=exit cd..='cd ..' cd-='cd -'
 alias clip='xsel -bi'
-
-# configure nano
+alias ln='ln -v'
 alias nano='nano -AELScim -T 4'
 alias testnet='while :; do ping -c4 8.8.8.8 && echo; sleep 2; done 2>/dev/null'
