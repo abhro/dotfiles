@@ -172,8 +172,10 @@ map <silent> <F12> :TagbarToggle<CR>
 "let g:syntastic_python_flake8_args='--ignore=E501'
 "let g:syntastic_python_flake8_post_args='--ignore=E501'
 
-"pretend fortran has coarray support
+" pretend fortran has coarray support
 let g:syntastic_fortran_compiler_options = '-fcoarray=single'
+" indent fortran do loops properly
+let fortran_do_enddo=1
 
 " make airline have that nice streamline
 " needs to have required powerline fonts installed
