@@ -83,6 +83,8 @@ set backspace=indent,eol,start
 
 set laststatus=2 " show statusline
 
+set tabpagemax=75 " let there be more than 10 tabs open at once
+
 " auto save on change of file
 "autocmd TextChanged,TextChangedI <buffer> silent write
 
