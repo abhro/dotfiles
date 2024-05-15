@@ -15,6 +15,8 @@ setopt autocd beep extendedglob notify
 # use vim keybindings
 bindkey -v
 
+bindkey '^R' history-incremental-search-backward
+
 zstyle :compinstall filename "$HOME/.zshrc"
 
 autoload -Uz compinit
