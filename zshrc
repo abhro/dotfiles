@@ -33,3 +33,5 @@ source ~/.bash_aliases
 export PS1="%{$bold_color$fg[green]%}%n@%M%{$reset_color%} %{$bold_color$fg[cyan]%}[%~]%{$reset_color%}%% "
 
 unsetopt case_glob
+
+[[ -a /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
