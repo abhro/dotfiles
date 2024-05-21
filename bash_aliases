@@ -24,6 +24,3 @@ alias serve='sudo python3 -m http.server 80'
 alias :q=exit cd..='cd ..' cd-='cd -'
 alias clip='xsel -bi'
 alias testnet='while :; do ping -c4 8.8.8.8 && echo; sleep 2; done 2>/dev/null'
-
-# set up nano
-alias nano='nano -AELScim -T 4'
