@@ -1,0 +1,21 @@
+
+# lines to be concatenated to default bashrc.  ^ keep that new line.
+
+# configure prompt
+export PS1='\[\033[01;32m\]\u@\h \[\033[01;36m\][\w]\[\033[00m\]\\$ '
+export PS2="${PS1/\\$/>}" #same as PS1, only an angle bracket as the final char
+
+# configure c compilers
+export CC=clang CXX=clang CFLAGS='-Wall -ggdb3'
+
+ulimit -c unlimited # allow core dumps
+
+# don't save history for less
+export LESSHISTFILE=/dev/null
+
+shopt -s cdspell # correct errors in cd
+shopt -s checkjobs # warn about jobs before exiting shell
+shopt -s extglob nocaseglob # use extended and case-insensitive globbing
+
+# immediately print job ending
+set -b
