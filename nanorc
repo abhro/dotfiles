@@ -1,0 +1,11 @@
+set smarthome
+set tabstospaces
+# set nonewlines
+set softwrap
+set atblanks
+set constantshow
+set emptyline
+set autoindent
+set mouse
+set magic
+set tabsize 4
