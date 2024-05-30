@@ -85,6 +85,11 @@ set laststatus=2 " show statusline
 
 set tabpagemax=75 " let there be more than 10 tabs open at once
 
+" control line break / wrapping behavior
+set linebreak
+set breakat-=.
+set breakat-=-
+
 " auto save on change of file
 "autocmd TextChanged,TextChangedI <buffer> silent write
 
