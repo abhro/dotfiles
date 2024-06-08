@@ -20,6 +20,9 @@ alias sudo='sudo ' xargs='xargs '
 
 # convenience
 alias gdb='gdb --quiet' valgrind='valgrind --quiet'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
 alias serve='sudo python3 -m http.server 80'
 alias :q=exit cd..='cd ..' cd-='cd -'
 alias clip='xsel -bi'
