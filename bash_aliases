@@ -4,7 +4,7 @@
 # protect and inform user
 alias cp='cp -iv' mv='mv -iv' rm='rm -iv' ln='ln -v'
 alias mkdir='mkdir -v' rmdir='rmdir -v'
-alias pgrep='pgrep -af' jobs='jobs -l'
+alias pgrep='pgrep -iaf' jobs='jobs -l'
 alias chmod='chmod -c' chown='chown -c' chgrp='chgrp -c'
 alias rename='rename -v'
 alias ln='ln -v'
