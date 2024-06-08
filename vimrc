@@ -6,6 +6,7 @@ filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'acarapetis/vim-colors-github'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'cespare/vim-toml'
 Plugin 'dense-analysis/ale'
