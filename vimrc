@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'acarapetis/vim-colors-github'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'cespare/vim-toml'
+Plugin 'dense-analysis/ale'
 Plugin 'honza/vim-snippets'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'jpo/vim-railscasts-theme'
@@ -27,7 +28,6 @@ Plugin 'tikhomirov/vim-glsl'
 Plugin 'tomtom/tlib_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'vundlevim/vundle.vim'
 call vundle#end()
 
@@ -173,15 +173,6 @@ map <silent> <F2> :NERDTreeToggle<CR>
 
 map <silent> <F12> :TagbarToggle<CR>
 
-" Syntastic configuration
-"let g:syntastic_python_python_exec = '/usr/bin/python3'
-"let g:syntastic_python_checkers = ['flake8']
-"let g:syntastic_python_checker_args='--ignore=E501 --py3k'
-"let g:syntastic_python_flake8_args='--ignore=E501'
-"let g:syntastic_python_flake8_post_args='--ignore=E501'
-
-" pretend fortran has coarray support
-let g:syntastic_fortran_compiler_options = '-fcoarray=single'
 " indent fortran do loops properly
 let fortran_do_enddo=1
 
