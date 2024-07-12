@@ -3,3 +3,6 @@
 
 using Revise
 using OhMyREPL
+redirect_stdio(stderr=devnull) do
+    @eval using AbbreviatedStackTraces
+end
