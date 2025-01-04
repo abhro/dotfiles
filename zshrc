@@ -18,6 +18,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git)
 
+source $ZSH/oh-my-zsh.sh
 
 autoload -U select-word-style
 select-word-style bash
@@ -55,8 +56,6 @@ autoload -Uz compinit
 compinit
 
 stty -ixon
-
-source $ZSH/oh-my-zsh.sh
 
 [[ -a /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
 
