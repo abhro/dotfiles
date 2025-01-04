@@ -36,3 +36,5 @@ export PS2="${PS1/\%\%/>}" #same as PS1, only an angle bracket as the final char
 unsetopt case_glob
 
 [[ -a /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
+
+# vi: set ft=zsh:
