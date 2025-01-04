@@ -56,6 +56,13 @@ compinit
 
 stty -ixon
 
+source $ZSH/oh-my-zsh.sh
+
+[[ -a /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
+
+WORDCHARS=''
+
+source ~/.envrc
 source ~/.bash_aliases
 
 # Prompt options
@@ -64,13 +71,5 @@ source ~/.bash_aliases
 # colored prompt
 export PS1="%{$bold_color$fg[green]%}%n@%M%{$reset_color%} %{$bold_color$fg[cyan]%}[%~]%{$reset_color%}%% "
 export PS2="${PS1/\%\%/>}" #same as PS1, only an angle bracket as the final char
-
-[[ -a /etc/zsh_command_not_found ]] && source /etc/zsh_command_not_found
-
-WORDCHARS=''
-
-source ~/.envrc
-
-source $ZSH/oh-my-zsh.sh
 
 # vi: set ft=zsh:
