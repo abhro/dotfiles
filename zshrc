@@ -16,6 +16,7 @@ setopt autocd beep extendedglob notify
 bindkey -v
 
 bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
 
 zstyle :compinstall filename "$HOME/.zshrc"
 
