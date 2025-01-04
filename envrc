@@ -1,1 +1,23 @@
-# Set environment variables here that are set across all shells so that it's not duplicated in bashrs/zshrc/et cetera
+# define shell-agnostic environment variables here. this file is to be sourced
+# by each shell's config file (i.e., ~/.bashrc, ~/.zshrc, etc.)
+
+# each variable must be exported
+
+# configure c compilers
+#export CC=clang CXX=clang
+#export CFLAGS='-Wall -ggdb3'
+
+# colored GCC warnings and errors
+#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# set editor
+export EDITOR=vim VISUAL=vim
+#export LANG=en_US.utf8 LC_COLLATE=en_US.utf8
+export PYTHONSTARTUP=~/.pythonrc.py
+
+export LESS=" -FR $LESS"
+export LESSHISTFILE=/dev/null # don't save history for less
+
+export SUDO_EDITOR="gvim -f" # editor for sudoedit
+
+# vi: set ft=sh:
