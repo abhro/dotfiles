@@ -12,7 +12,7 @@ alias ln='ln -v'
 # set up directory listing options
 alias ls='ls --group-directories-first --color -FNl'
 alias ll='ls -lh' la='ls -A' l='ls -CF'
-alias exa='exa --group-directories-first -Flh'
+alias eza='eza --group-directories-first -F --no-quotes'
 alias tree='tree --dirsfirst -AFNh' diff='diff --color'
 
 # let sudo and xargs use aliases
