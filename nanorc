@@ -1,11 +1,39 @@
+# Make the home key smarter. Jump to first non-whitespace character
 set smarthome
+
+# Convert each typed tabs to spaces
 set tabstospaces
+
+# Don’t automatically add a newline when a text does not end with one
 # set nonewlines
+
+# Display lines that exceed the screen’s width over multiple screen lines
+# (AKA) softwrapping
 set softwrap
+
+# When soft line wrapping is enabled, make it wrap lines at blank characters
+# (tabs and spaces) instead of always at the edge of the screen
 set atblanks
+
+# Constantly display the cursor position in the status bar
+# This overrides the option quickblank
 set constantshow
+
+# Do not use the line below the title bar, leaving it entirely blank
 set emptyline
+
+# Automatically indent a new line to the same indent of previous line
 set autoindent
+
+# Enable mouse support
 set mouse
+
+# When neither the file’s name nor its first line give a clue,
+# try using libmagic to determine the applicable syntax
 set magic
+
+# Number of spaces each tab gets
 set tabsize 4
+
+# Display line numbers to the left of the text area.
+set linenumbers
