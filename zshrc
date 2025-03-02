@@ -62,7 +62,7 @@ stty -ixon
 WORDCHARS=''
 
 source ~/.envrc
-source ~/.bash_aliases
+source ~/.aliases
 
 # Prompt options
 # plain prompt
