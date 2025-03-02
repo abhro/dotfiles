@@ -1,5 +1,4 @@
-# NOTE: keep the syntax compatible with zsh because .zshrc may source it and
-# naming this .aliases feels weird
+# aliases file to be sourced by .bashrc and .zshrc
 
 # protect and inform user
 alias cp='cp -iv' mv='mv -iv' rm='rm -iv' ln='ln -v'
