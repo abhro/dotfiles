@@ -14,4 +14,7 @@ shopt -s extglob nocaseglob # use extended and case-insensitive globbing
 # immediately print job ending
 set -b
 
-source .envrc
+source $HOME/.aliases
+source $HOME/.envrc
+
+# vim: set ft=sh:
