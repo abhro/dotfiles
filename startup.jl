@@ -11,7 +11,7 @@ end
 function template()
     @eval begin
         using PkgTemplates
-        tpl = Template(
+        Template(
             user = "abhro",
             authors = "Abhro R. and contributors",
             dir = joinpath(homedir(), "src"),
