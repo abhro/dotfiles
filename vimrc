@@ -3,33 +3,38 @@
 " configure vundle
 set nocompatible
 filetype off
+set shellslash
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'acarapetis/vim-colors-github'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'cespare/vim-toml'
-Plugin 'chrisbra/csv.vim'
 Plugin 'dense-analysis/ale'
-Plugin 'honza/vim-snippets'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'JuliaEditorSupport/julia-vim'
-Plugin 'jpo/vim-railscasts-theme'
-Plugin 'keith/swift.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'preservim/tagbar'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'Mebus/jellybeans.vim'
-Plugin 'peterhoeg/vim-qml'
-Plugin 'PProvost/vim-ps1'
 Plugin 'romainl/Apprentice'
-Plugin 'rust-lang/rust.vim'
-Plugin 'preservim/nerdtree'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'sjl/badwolf'
-Plugin 'tikhomirov/vim-glsl'
+Plugin 'wellle/context.vim'
+Plugin 'chrisbra/csv.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Mebus/jellybeans.vim'
+Plugin 'JuliaEditorSupport/julia-vim'
+Plugin 'preservim/nerdtree'
+Plugin 'rust-lang/rust.vim'
+Plugin 'keith/swift.vim'
+Plugin 'preservim/tagbar'
 Plugin 'tomtom/tlib_vim'
-Plugin 'tpope/vim-fugitive'
+Plugin 'kaarmu/typst.vim'
 Plugin 'vim-airline/vim-airline'
+Plugin 'acarapetis/vim-colors-github'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tikhomirov/vim-glsl'
+Plugin 'maksimr/vim-jsbeautify'
+Plugin 'vim-latex/vim-latex'
+Plugin 'PProvost/vim-ps1'
+Plugin 'peterhoeg/vim-qml'
+Plugin 'jpo/vim-railscasts-theme'
+Plugin 'honza/vim-snippets'
+Plugin 'cespare/vim-toml'
+Plugin 'lervag/vimtex'
 Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
 
@@ -53,16 +58,16 @@ colorscheme badwolf
 if has("win32")
   set guifont=Consolas:h11
 else
-  set guifont=Hack\ 13
+  set guifont=Hack\ 14
 endif
 set guioptions+=ae
 set guioptions-=t
 set splitright
 set nobomb
-set viminfo+=n~/.viminfo " for windows (i really hate _viminfo)
+set viminfofile=~/.viminfo " for windows (i really hate _viminfo)
 if has('gui_running') | set columns=95 lines=28 | endif
 
-set colorcolumn=80 textwidth=80
+set colorcolumn=80,92,120,+0 textwidth=80
 set autoindent smartindent
 set expandtab smarttab nojoinspaces
 set shiftwidth=4
@@ -91,6 +96,7 @@ set tabpagemax=75 " let there be more than 10 tabs open at once
 set linebreak
 set breakat-=.
 set breakat-=-
+set breakat-=:
 
 " auto save on change of file
 "autocmd TextChanged,TextChangedI <buffer> silent write
@@ -174,6 +180,10 @@ let NERDTreeShowBookmarks=1
 map <silent> <F2> :NERDTreeToggle<CR>
 
 map <silent> <F12> :TagbarToggle<CR>
+let g:tagbar_type_julia = {
+      \ 'ctagstype' : 'julia',
+      \ 'kinds'     : ['t:struct', 'f:function', 'm:macro', 'c:const']
+    \ }
 
 " indent fortran do loops properly
 let fortran_do_enddo=1
