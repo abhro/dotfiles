@@ -178,6 +178,10 @@ let NERDTreeShowBookmarks=1
 map <silent> <F2> :NERDTreeToggle<CR>
 
 map <silent> <F12> :TagbarToggle<CR>
+let g:tagbar_type_julia = {
+      \ 'ctagstype' : 'julia',
+      \ 'kinds'     : ['t:struct', 'f:function', 'm:macro', 'c:const']
+    \ }
 
 " indent fortran do loops properly
 let fortran_do_enddo=1
