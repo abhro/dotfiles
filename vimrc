@@ -57,7 +57,7 @@ colorscheme badwolf
 if has("win32")
   set guifont=Consolas:h11
 else
-  set guifont=Hack\ 13
+  set guifont=Hack\ 14
 endif
 set guioptions+=ae
 set guioptions-=t
@@ -95,6 +95,7 @@ set tabpagemax=75 " let there be more than 10 tabs open at once
 set linebreak
 set breakat-=.
 set breakat-=-
+set breakat-=:
 
 " auto save on change of file
 "autocmd TextChanged,TextChangedI <buffer> silent write
