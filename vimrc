@@ -66,7 +66,7 @@ set nobomb
 set viminfo+=n~/.viminfo " for windows (i really hate _viminfo)
 if has('gui_running') | set columns=95 lines=28 | endif
 
-set colorcolumn=80 textwidth=80
+set colorcolumn=80,92,120,+0 textwidth=80
 set autoindent smartindent
 set expandtab smarttab nojoinspaces
 set shiftwidth=4
