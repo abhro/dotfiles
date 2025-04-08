@@ -3,6 +3,7 @@
 " configure vundle
 set nocompatible
 filetype off
+set shellslash
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'acarapetis/vim-colors-github'
