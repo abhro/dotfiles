@@ -64,7 +64,7 @@ set guioptions+=ae
 set guioptions-=t
 set splitright
 set nobomb
-set viminfo+=n~/.viminfo " for windows (i really hate _viminfo)
+set viminfofile=~/.viminfo " for windows (i really hate _viminfo)
 if has('gui_running') | set columns=95 lines=28 | endif
 
 set colorcolumn=80,92,120,+0 textwidth=80
