@@ -20,7 +20,7 @@ function template()
             plugins = [
                 Citation(),
                 Codecov(),
-                CompatHelper(),
+                CompatHelper(cron = "0 0 */5 * *"),
                 Dependabot(),
                 Documenter{GitHubActions}(),
                 Git(),
