@@ -26,7 +26,6 @@ function template()
                 Git(),
                 GitHubActions(),
                 License(name = "MIT"),
-                PkgBenchmark(),
                 PkgEvalBadge(),
                 ProjectFile(version = v"0.0.0-DEV"),
                 Readme(),
