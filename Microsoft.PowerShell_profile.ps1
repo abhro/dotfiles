@@ -23,4 +23,4 @@ Set-PSReadlineKeyHandler -Key Ctrl+D -Function ViExit
 function idle { pyw.exe -m idlelib $args }
 function pydoc { py.exe -m pydoc $args }
 
-function prompt { "`nPS $($executionContext.SessionState.Path.CurrentLocation)`n$> " }
+function prompt { "`nPS [$($executionContext.SessionState.Path.CurrentLocation)]`n$> " }
