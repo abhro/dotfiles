@@ -11,28 +11,29 @@ end
 function template()
     @eval begin
         using PkgTemplates
-        Template(
+        plugins = [
+            Citation(),
+            Codecov(),
+            CompatHelper(cron = "0 0 */5 * *"),
+            Dependabot(),
+            Documenter{GitHubActions}(),
+            Git(),
+            GitHubActions(linux = true, windows = true, osx = true),
+            License(name = "MIT"),
+            PkgEvalBadge(),
+            ProjectFile(version = v"0.0.0-DEV"),
+            Readme(),
+            SrcDir(),
+            TagBot(),
+            Tests(project = true, aqua = true),
+        ]
+        Template(;
             user = "abhro",
             authors = "Abhro R. and contributors",
             dir = joinpath(homedir(), "src"),
             host = "github.com",
             julia = v"1.10.0",
-            plugins = [
-                Citation(),
-                Codecov(),
-                CompatHelper(cron = "0 0 */5 * *"),
-                Dependabot(),
-                Documenter{GitHubActions}(),
-                Git(),
-                GitHubActions(),
-                License(name = "MIT"),
-                PkgEvalBadge(),
-                ProjectFile(version = v"0.0.0-DEV"),
-                Readme(),
-                SrcDir(),
-                TagBot(),
-                Tests(project = true, aqua = true),
-            ],
+            plugins,
         )
     end
 end
