@@ -1,8 +1,9 @@
 # Julia (Julialang) REPL startup file
 # Should be placed in ~/.julia/config/startup.jl
 
+import Pkg
+
 atreplinit() do repl
-    @eval import Pkg
     @eval using Revise, OhMyREPL
     redirect_stdio(stderr=devnull) do
         @eval using AbbreviatedStackTraces
