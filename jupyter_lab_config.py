@@ -25,10 +25,10 @@ c = get_config()  #noqa
 #        the extensions setup.py.
 
 ## Whether to open in a browser after starting.
-#          The specific browser used is platform dependent and
-#          determined by the python standard library `webbrowser`
-#          module, unless it is overridden using the --browser
-#          (ServerApp.browser) configuration option.
+#     The specific browser used is platform dependent and
+#     determined by the python standard library `webbrowser`
+#     module, unless it is overridden using the --browser
+#     (ServerApp.browser) configuration option.
 #  Default: False
 c.ExtensionApp.open_browser = False
 
@@ -38,8 +38,7 @@ c.ExtensionApp.open_browser = False
 #------------------------------------------------------------------------------
 ## A Lab Server Application that runs out-of-the-box
 
-## Whether a notebook should start a kernel automatically.
-#  Default: True
+## Whether a notebook should start a kernel automatically. Default: True
 c.LabServerApp.notebook_starts_kernel = False
 
 ## Whether to open in a browser after starting.
@@ -51,13 +50,13 @@ c.LabServerApp.open_browser = False
 # LabApp(LabServerApp) configuration
 #------------------------------------------------------------------------------
 
-## Whether a notebook should start a kernel automatically.
-#  Default: True
+## Whether a notebook should start a kernel automatically. Default: True
 c.LabApp.notebook_starts_kernel = False
 
 ## Whether to open in a browser after starting.
 #  See also: ExtensionApp.open_browser
 c.LabApp.open_browser = False
+
 
 #------------------------------------------------------------------------------
 # ServerApp(JupyterApp) configuration
@@ -65,15 +64,14 @@ c.LabApp.open_browser = False
 ## The Jupyter Server application class.
 
 ## Whether to open in a browser after starting.
-#                          The specific browser used is platform dependent and
-#                          determined by the python standard library `webbrowser`
-#                          module, unless it is overridden using the --browser
-#                          (ServerApp.browser) configuration option.
+#      The specific browser used is platform dependent and
+#      determined by the python standard library `webbrowser`
+#      module, unless it is overridden using the --browser
+#      (ServerApp.browser) configuration option.
 #  Default: False
 c.ServerApp.open_browser = False
 
 
-
-
 from pathlib import Path
-c.FileCheckpoints.checkpoint_dir = str(Path.home() / ".jupyter/checkpoints")
+# store Jupyter notebook checkpoints in a central directory
+c.FileCheckpoints.checkpoint_dir = str(Path.home() / ".jupyter" / "checkpoints")
