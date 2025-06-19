@@ -1,4 +1,77 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
-
-final_space: true
 version: 3
+final_space: true
+console_title_template: '{{ .Shell }} in {{ .Folder }}'
+
+palette:
+  black: '#262B44'
+  blue: '#4B95E9'
+  green: '#59C9A5'
+  orange: '#F07623'
+  red: '#D81E5B'
+  white: '#E0DEF4'
+  yellow: '#F3AE35'
+
+upgrade:
+  source: cdn
+  interval: 168h
+  auto: true
+  notice: false
+
+#secondary_prompt:
+#  template: '<p:yellow,transparent></><,p:yellow>{{ .PWD }} </><p:yellow,transparent></> '
+#  foreground: 'p:black'
+#  background: transparent
+
+#transient_prompt:
+#  template: '<p:yellow,transparent></><,p:yellow>{{ .PWD }} </><p:yellow,transparent></> '
+#  foreground: 'p:black'
+#  background: transparent
+
+blocks:
+  - type: prompt
+    alignment: left
+    newline: true
+    segments:
+
+        # If in SSH, print an indicator, then print username
+      - type: session
+        style: diamond
+        leading_diamond: 
+        trailing_diamond: 
+        powerline_symbol: 
+        template: '{{ if .SSHSession }} {{ end }}{{ .UserName }} '
+        foreground: 'p:black'
+        background: 'p:yellow'
+
+        # Git and other version control status
+      - type: git
+        template: ' {{ .HEAD }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }} '
+        powerline_symbol: 
+        trailing_diamond: 
+        foreground: 'p:black'
+        background: 'p:green'
+        style: diamond
+        properties:
+          branch_max_length: 25
+          fetch_status: true
+          fetch_upstream_icon: true
+
+        # print admin status
+      - type: root
+        template: '  '
+        foreground: 'p:white'
+        powerline_symbol: 
+        background: 'p:yellow'
+        style: diamond
+
+        # Print current working directory
+      - type: path
+        template: '   {{ path .Path .Location }} '
+        powerline_symbol: 
+        trailing_diamond: 
+        foreground: 'p:white'
+        background: 'p:orange'
+        style: diamond
+        properties:
+          style: agnoster_full
+          folder_separator_icon: /
