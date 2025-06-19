@@ -31,18 +31,18 @@ HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 setopt append_history
-setopt inc_append_history # append to history immediately (incrementally)
+setopt inc_append_history   # append to history immediately (incrementally)
 setopt hist_ignore_all_dups # keep all history lines unique (not just adjacent ones)
-setopt hist_ignore_space # allow incognito commands
+setopt hist_ignore_space    # allow incognito commands
 setopt hist_reduce_blanks
 unsetopt extended_history
 
-setopt auto_cd # cd if only directory name entered
-setopt beep # beep on error in ZLE
-setopt extended_glob # treat '#', '~', and '^' as part of patterns in globs
-setopt notify # immediately report on background jobs
+setopt auto_cd          # cd if only directory name entered
+setopt beep             # beep on error in ZLE
+setopt extended_glob    # treat '#', '~', and '^' as part of patterns in globs
+setopt notify           # immediately report on background jobs
 setopt print_exit_value # print exit value of programs if they errored
-unsetopt case_glob # case-(in)sensitive globbing
+unsetopt case_glob      # case-(in)sensitive globbing
 
 # use vim keybindings
 bindkey -v
@@ -63,12 +63,22 @@ WORDCHARS=''
 
 source ~/.envrc
 source ~/.aliases
+autoload -Uz vcs_info # version control stuff for prompt
+precmd() { vcs_info }
 
 # Prompt options
-# plain prompt
-#export PS1="%n@%M:%~%% "
-# colored prompt
-export PS1="%{$bold_color$fg[green]%}%n@%M%{$reset_color%} %{$bold_color$fg[cyan]%}[%~]%{$reset_color%}%% "
+zstyle ':vcs_info:*' formats '(%b)'
+colored_prompt=1
+if [ $colored_prompt -eq 1 ]; then              # colored prompt
+    machineinfo="%{$bold_color$fg[green]%}%n@%M%{$reset_color%}"
+    dirinfo="%{$bold_color$fg[cyan]%}[%~]%{$reset_color%}"
+else                                            # plain prompt
+    machineinfo="%n@%M"
+    dirinfo="[%~]"
+fi
+vcsinfo='${vcs_info_msg_0_}'
+NEWLINE=$'\n'
+export PS1="$dirinfo $vcsinfo$NEWLINE$machineinfo %% "
 export PS2="${PS1/\%\%/>}" #same as PS1, only an angle bracket as the final char
 
 # vi: set ft=zsh:
