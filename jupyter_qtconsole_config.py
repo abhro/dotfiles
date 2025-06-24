@@ -7,6 +7,8 @@ c = get_config()  #noqa
 c.ConsoleWidget.font_family = 'Cascadia Mono'  if system() == 'Windows' else 'Hack'
 c.ConsoleWidget.font_size = 14
 
+c.ConsoleWidget.buffer_size = 1_048_576
+
 #c.ConsoleWidget.kind = 'rich'
 
 c.JupyterQtConsoleApp.confirm_exit = False
