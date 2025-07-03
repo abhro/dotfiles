@@ -32,29 +32,47 @@ blocks:
     alignment: left
     newline: true
     segments:
-
-        # If in SSH, print an indicator, then print username
-      - type: session
+        # print name of virtual environment
+      - type: python
         style: diamond
-        leading_diamond: 
-        trailing_diamond: 
-        powerline_symbol: 
-        template: '{{ if .SSHSession }} {{ end }}{{ .UserName }} '
         foreground: 'p:black'
-        background: 'p:yellow'
+        background: 'p:white'
+        #leading_diamond: 
+        #trailing_diamond: 
+        template: ' {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Major }}.{{ .Minor }}{{ end }} '
+        properties:
+          display_mode: 'environment'
+          fetch_virtual_env: true
+          fetch_version: true
+          prefix: "\uE235 ("
+          postfix: ") "
 
         # Git and other version control status
       - type: git
+        style: diamond
+        #leading_diamond: 
+        #trailing_diamond: 
         template: ' {{ .HEAD }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }} '
-        powerline_symbol: 
-        trailing_diamond: 
         foreground: 'p:black'
         background: 'p:green'
-        style: diamond
         properties:
           branch_max_length: 25
           fetch_status: true
           fetch_upstream_icon: true
+
+      - type: text
+        style: plain
+        template: "\n"
+
+        # If in SSH, print an indicator, then print username
+      - type: session
+        style: diamond
+        #leading_diamond: 
+        #trailing_diamond: 
+        powerline_symbol: 
+        template: ' {{ if .SSHSession }} {{ end }}{{ .UserName }} '
+        foreground: 'p:black'
+        background: 'p:yellow'
 
         # print admin status
       - type: root
