@@ -20,4 +20,7 @@ export LESSHISTFILE=/dev/null # don't save history for less
 
 export SUDO_EDITOR="gvim -f" # editor for sudoedit
 
+# output format for Slurm's squeue command
+export SQUEUE_FORMAT="%.9i %.9P %.26j %.24u %.5t %.16M %.6D %R"
+
 # vi: set ft=sh:
