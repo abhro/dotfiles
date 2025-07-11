@@ -32,6 +32,14 @@ blocks:
     alignment: left
     newline: true
     segments:
+
+         # print hostname
+      - type: session
+        style: diamond
+        template: '[{{ .HostName }}] '
+        foreground: 'p:black'
+        background: 'p:yellow'
+
         # print name of virtual environment
       - type: python
         style: diamond
