@@ -10,6 +10,7 @@ palette:
   orange: '#F07623'
   red: '#D81E5B'
   white: '#E0DEF4'
+  gray: '#AAAAAA'
   yellow: '#F3AE35'
 
 upgrade:
