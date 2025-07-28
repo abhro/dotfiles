@@ -5,6 +5,7 @@ console_title_template: '{{ .Shell }} in {{ .Folder }} @ {{ .HostName }}'
 palette:
   black: '#262B44'
   blue: '#4B95E9'
+  light-blue: '#6BB5FF'
   green: '#59C9A5'
   orange: '#F07623'
   red: '#D81E5B'
