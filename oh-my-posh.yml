@@ -33,18 +33,18 @@ blocks:
     newline: true
     segments:
 
-         # print hostname
+        # print hostname
       - type: session
         style: diamond
         template: '[{{ .HostName }}] '
-        foreground: 'p:black'
-        background: 'p:yellow'
+        foreground: p:black
+        background: p:yellow
 
         # print name of virtual environment
       - type: python
         style: diamond
-        foreground: 'p:black'
-        background: 'p:white'
+        foreground: p:black
+        background: p:white
         #leading_diamond: 
         #trailing_diamond: 
         template: ' {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Major }}.{{ .Minor }}{{ end }} '
@@ -61,8 +61,8 @@ blocks:
         #leading_diamond: 
         #trailing_diamond: 
         template: ' {{ .HEAD }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }} '
-        foreground: 'p:black'
-        background: 'p:green'
+        foreground: p:black
+        background: p:green
         properties:
           branch_max_length: 25
           fetch_status: true
@@ -79,15 +79,15 @@ blocks:
         #trailing_diamond: 
         powerline_symbol: 
         template: ' {{ if .SSHSession }} {{ end }}{{ .UserName }} '
-        foreground: 'p:black'
-        background: 'p:yellow'
+        foreground: p:black
+        background: p:yellow
 
         # print admin status
       - type: root
         template: '  '
-        foreground: 'p:white'
         powerline_symbol: 
-        background: 'p:yellow'
+        foreground: p:white
+        background: p:yellow
         style: diamond
 
         # Print current working directory
@@ -95,8 +95,8 @@ blocks:
         template: '   {{ path .Path .Location }} '
         powerline_symbol: 
         trailing_diamond: 
-        foreground: 'p:white'
-        background: 'p:orange'
+        foreground: p:white
+        background: p:orange
         style: diamond
         properties:
           style: agnoster_full
