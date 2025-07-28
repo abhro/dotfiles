@@ -21,12 +21,12 @@ upgrade:
 
 #secondary_prompt:
 #  template: '<p:yellow,transparent></><,p:yellow>{{ .PWD }} </><p:yellow,transparent></> '
-#  foreground: 'p:black'
+#  foreground: p:black
 #  background: transparent
 
 #transient_prompt:
 #  template: '<p:yellow,transparent></><,p:yellow>{{ .PWD }} </><p:yellow,transparent></> '
-#  foreground: 'p:black'
+#  foreground: p:black
 #  background: transparent
 
 blocks:
