@@ -38,7 +38,7 @@ blocks:
         # print hostname
       - type: session
         style: diamond
-        template: '[{{ .HostName }}] '
+        template: ' {{ .HostName }} '
         foreground: p:black
         background: p:yellow
 
