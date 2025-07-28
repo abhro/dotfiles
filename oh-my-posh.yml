@@ -1,6 +1,6 @@
 version: 3
 final_space: true
-console_title_template: '{{ .Shell }} in {{ .Folder }}'
+console_title_template: '{{ .Shell }} in {{ .Folder }} @ {{ .HostName }}'
 
 palette:
   black: '#262B44'
