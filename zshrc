@@ -81,4 +81,4 @@ NEWLINE=$'\n'
 export PS1="$dirinfo $vcsinfo$NEWLINE$machineinfo %% "
 export PS2="${PS1/\%\%/>}" #same as PS1, only an angle bracket as the final char
 
-# vi: set ft=zsh:
+# vi: set filetype=zsh:
