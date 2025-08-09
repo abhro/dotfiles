@@ -64,23 +64,24 @@ WORDCHARS=''
 source ~/.envrc
 source ~/.aliases
 autoload -Uz vcs_info # version control stuff for prompt
-precmd() { vcs_info }
 
 # Prompt options
-zstyle ':vcs_info:*' formats '(%b)'
-colored_prompt=1
-if [ $colored_prompt -eq 1 ]; then              # colored prompt
-    machineinfo="%{$bold_color$fg[green]%}%n@%M%{$reset_color%}"
-    dirinfo="%{$bold_color$fg[cyan]%}[%~]%{$reset_color%}"
-else                                            # plain prompt
-    machineinfo="%n@%M"
-    dirinfo="[%~]"
+if [[ -e ~/.oh-my-posh.yml ]]; then
+  eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.yml)"
+else
+  precmd() { vcs_info }
+  zstyle ':vcs_info:*' formats '(%b)'
+  colored_prompt=1
+  machineinfo="%n@%M"
+  dirinfo="[%~]"
+  if [ $colored_prompt -eq 1 ]; then              # colored prompt
+    machineinfo="%{$bold_color$fg[green]%}$machine_info%{$reset_color%}"
+    dirinfo="%{$bold_color$fg[cyan]%}$dirinfo%{$reset_color%}"
+  fi
+  vcsinfo='${vcs_info_msg_0_}'
+  NEWLINE=$'\n'
+  export PS1="$dirinfo $vcsinfo$NEWLINE$machineinfo %% "
+  export PS2="${PS1/\%\%/>}" #same as PS1, only an angle bracket as the final char
 fi
-vcsinfo='${vcs_info_msg_0_}'
-NEWLINE=$'\n'
-export PS1="$dirinfo $vcsinfo$NEWLINE$machineinfo %% "
-export PS2="${PS1/\%\%/>}" #same as PS1, only an angle bracket as the final char
-
-[[ -e ~/.oh-my-posh.yml ]] && eval "$(oh-my-posh init zsh --config ~/.oh-my-posh.yml)"
 
 # vi: set filetype=zsh:
