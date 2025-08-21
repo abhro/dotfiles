@@ -2,8 +2,12 @@
 # lines to be concatenated to default bashrc.  ^ keep that new line.
 
 # configure prompt
-export PS1='\[\033[01;32m\]\u@\h \[\033[01;36m\][\w]\[\033[00m\]\\$ '
-export PS2="${PS1/\\$/>}" #same as PS1, only an angle bracket as the final char
+if [[ -e ~/.oh-my-posh.yml ]]; then
+  eval "$(oh-my-posh init bash --config ~/.oh-my-posh.yml)"
+else
+  export PS1='\[\033[01;32m\]\u@\h \[\033[01;36m\][\w]\[\033[00m\]\\$ '
+  export PS2="${PS1/\\$/>}" #same as PS1, only an angle bracket as the final char
+fi
 
 ulimit -c unlimited # allow core dumps
 
