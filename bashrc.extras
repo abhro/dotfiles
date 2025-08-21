@@ -21,4 +21,4 @@ set -b
 source $HOME/.aliases
 source $HOME/.envrc
 
-# vim: set ft=sh:
+# vim: set filetype=sh:
