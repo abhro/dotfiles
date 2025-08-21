@@ -35,6 +35,12 @@ blocks:
     newline: true
     segments:
 
+        # print which shell we're using
+      - type: shell
+        style: powerline
+        foreground: "#ffffff"
+        background: "#0077c2"
+
         # print hostname
       - type: session
         style: diamond
