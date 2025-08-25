@@ -62,7 +62,7 @@ else
 endif
 set guioptions+=ae
 set guioptions-=t
-set splitright
+set splitright splitbelow
 set nobomb
 set viminfofile=~/.viminfo " for windows (i really hate _viminfo)
 if has('gui_running') | set columns=95 lines=28 | endif
