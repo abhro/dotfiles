@@ -6,34 +6,34 @@ filetype off
 set shellslash
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'dense-analysis/ale'
-Plugin 'romainl/Apprentice'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'sjl/badwolf'
-Plugin 'wellle/context.vim'
-Plugin 'chrisbra/csv.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'Mebus/jellybeans.vim'
-Plugin 'JuliaEditorSupport/julia-vim'
-Plugin 'preservim/nerdtree'
-Plugin 'rust-lang/rust.vim'
-Plugin 'keith/swift.vim'
-Plugin 'preservim/tagbar'
-Plugin 'tomtom/tlib_vim'
-Plugin 'kaarmu/typst.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'acarapetis/vim-colors-github'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'tikhomirov/vim-glsl'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'vim-latex/vim-latex'
-Plugin 'PProvost/vim-ps1'
-Plugin 'jpo/vim-railscasts-theme'
-Plugin 'honza/vim-snippets'
-Plugin 'lervag/vimtex'
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'dense-analysis/ale'               " Asynchronous lint engine (LSP)
+Plugin 'romainl/Apprentice'               " Dark low-contrast color scheme
+Plugin 'jiangmiao/auto-pairs'             " Insert/delete parentheses and brackets in pairs
+Plugin 'sjl/badwolf'                      " Dark mode color scheme
+Plugin 'wellle/context.vim'               " Show context of current line (sticky scroll)
+Plugin 'chrisbra/csv.vim'                 " Support for CSV files
+Plugin 'ctrlpvim/ctrlp.vim'               " Full path fuzzy file finder
+Plugin 'Mebus/jellybeans.vim'             " Dark mode color scheme
+Plugin 'JuliaEditorSupport/julia-vim'     " Vim support for Julia (julialang)
+Plugin 'preservim/nerdtree'               " File system explorer
+Plugin 'rust-lang/rust.vim'               " Vim support for Rust (rustlang)
+Plugin 'keith/swift.vim'                  " Vim support for Swift (Apple)
+Plugin 'preservim/tagbar'                 " File outline/tag viewer
+Plugin 'tomtom/tlib_vim'                  " Utility for other plugins
+Plugin 'kaarmu/typst.vim'                 " Vim support for Typst
+Plugin 'vim-airline/vim-airline'          " Lean status/tab-line for vim
+Plugin 'acarapetis/vim-colors-github'     " GitHub light mode color scheme for vim
+Plugin 'altercation/vim-colors-solarized' " Solarized color scheme for vim
+Plugin 'tpope/vim-fugitive'               " Git plugin for vim
+Plugin 'airblade/vim-gitgutter'           " Shows git diff in the sign column (gutter)
+Plugin 'tikhomirov/vim-glsl'              " Vim support for OpenGL Shading Language
+Plugin 'maksimr/vim-jsbeautify'           " Format JavaScript files with js-beautify
+Plugin 'vim-latex/vim-latex'              " Enhanced LaTeX support for vim
+Plugin 'PProvost/vim-ps1'                 " Vim support for Windows PowerShell
+Plugin 'jpo/vim-railscasts-theme'         " Dark mode RailsCasts color scheme
+Plugin 'honza/vim-snippets'               " Vim snip-mate default snippets
+Plugin 'lervag/vimtex'                    " File type and syntax for (La)TeX files
+Plugin 'VundleVim/Vundle.vim'             " Vim plugin manager (Vundle manages itself)
 call vundle#end()
 
 behave xterm
