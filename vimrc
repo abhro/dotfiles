@@ -32,7 +32,6 @@ Plugin 'vim-latex/vim-latex'
 Plugin 'PProvost/vim-ps1'
 Plugin 'jpo/vim-railscasts-theme'
 Plugin 'honza/vim-snippets'
-Plugin 'cespare/vim-toml'
 Plugin 'lervag/vimtex'
 Plugin 'VundleVim/Vundle.vim'
 call vundle#end()
