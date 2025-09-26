@@ -24,5 +24,6 @@ Set-PSReadlineKeyHandler -Key Ctrl+D -Function DeleteCharOrExit
 function idle { pyw.exe -m idlelib $args }
 function pydoc { py.exe -m pydoc $args }
 
-function prompt { "`nPS [$($executionContext.SessionState.Path.CurrentLocation)]`n$> " }
+#function prompt { "`nPS [$($executionContext.SessionState.Path.CurrentLocation)]`n$> " }
 
+oh-my-posh.exe init pwsh --config "$HOME/.oh-my-posh.yml" | Invoke-Expression
