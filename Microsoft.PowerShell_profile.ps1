@@ -13,7 +13,8 @@ Set-PSReadLineOption -AddToHistoryHandler {
 }
 
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
-Set-PSReadlineKeyHandler -Key Ctrl+D -Function ViExit
+#Set-PSReadlineKeyHandler -Key Ctrl+D -Function ViExit
+Set-PSReadlineKeyHandler -Key Ctrl+D -Function DeleteCharOrExit
 
 # Extra keybindings and options for PowerShell Core on Linux
 #Set-PSReadlineKeyHandler -Key 'Ctrl+LeftArrow' -Function ShellBackwardWord
@@ -24,3 +25,4 @@ function idle { pyw.exe -m idlelib $args }
 function pydoc { py.exe -m pydoc $args }
 
 function prompt { "`nPS [$($executionContext.SessionState.Path.CurrentLocation)]`n$> " }
+
