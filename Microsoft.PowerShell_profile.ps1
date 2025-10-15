@@ -15,6 +15,7 @@ Set-PSReadLineOption -AddToHistoryHandler {
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
 #Set-PSReadlineKeyHandler -Key Ctrl+D -Function ViExit
 Set-PSReadlineKeyHandler -Key Ctrl+D -Function DeleteCharOrExit
+Set-PSReadlineKeyHandler -Key Ctrl+u -Function BackwardDeleteLine
 
 # Extra keybindings and options for PowerShell Core on Linux
 #Set-PSReadlineKeyHandler -Key 'Ctrl+LeftArrow' -Function ShellBackwardWord
@@ -27,3 +28,4 @@ function pydoc { py.exe -m pydoc $args }
 #function prompt { "`nPS [$($executionContext.SessionState.Path.CurrentLocation)]`n$> " }
 
 oh-my-posh.exe init pwsh --config "$HOME/.oh-my-posh.yml" | Invoke-Expression
+
