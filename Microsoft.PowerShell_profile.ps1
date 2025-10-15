@@ -19,6 +19,7 @@ Set-PSReadLineOption -AddToHistoryHandler {
 Set-PSReadlineKeyHandler -Key Tab -Function Complete
 #Set-PSReadlineKeyHandler -Key Ctrl+D -Function ViExit
 Set-PSReadlineKeyHandler -Key Ctrl+D -Function DeleteCharOrExit
+Set-PSReadlineKeyHandler -Key Ctrl+u -Function BackwardDeleteLine
 
 Set-PSReadlineKeyHandler -Key Ctrl+u -Function BackwardDeleteLine
 # Extra keybindings for PowerShell Core on Linux
@@ -28,7 +29,6 @@ Set-PSReadlineKeyHandler -Key Ctrl+u -Function BackwardDeleteLine
 function idle { pyw.exe -m idlelib $args }
 function pydoc { py.exe -m pydoc $args }
 
-oh-my-posh.exe init pwsh --config "$HOME/.oh-my-posh.yml" | Invoke-Expression
 oh-my-posh.exe init pwsh --config "$HOME/.oh-my-posh.yml" | Invoke-Expression
 
 function TabExpansion2 {
