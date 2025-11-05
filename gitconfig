@@ -8,7 +8,7 @@
 	autoCorrect = prompt
 [diff]
 	renames = copies
-	suppressBlankEmpty = false
+	suppressBlankEmpty = true
 [grep]
 	lineNumber = true
 [color]
