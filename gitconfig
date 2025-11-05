@@ -1,0 +1,31 @@
+# global/user-level git configuration
+[core]
+	editor = gvim -f
+	excludesfile = ~/.gitignore
+	hideDotFiles = true
+	eol = lf
+[help]
+	autoCorrect = prompt
+[diff]
+	renames = copies
+	suppressBlankEmpty = false
+[grep]
+	lineNumber = true
+[color]
+	ui = auto
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true
+[push]
+	autoSetupRemote = true
+[fetch]
+	prune = true
+[rebase]
+	autoStash = true
+[status]
+	showStash = true
+[tig]
+	history-size = 0
