@@ -29,3 +29,5 @@
 	showStash = true
 [tig]
 	history-size = 0
+
+# vi: set filetype=gitconfig:
