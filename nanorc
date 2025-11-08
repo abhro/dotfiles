@@ -4,7 +4,7 @@ set smarthome
 # Convert each typed tabs to spaces
 set tabstospaces
 
-# Don’t automatically add a newline when a text does not end with one
+# Don't automatically add a newline when a text does not end with one
 # set nonewlines
 
 # Display lines that exceed the screen’s width over multiple screen lines
