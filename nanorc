@@ -28,7 +28,7 @@ set autoindent
 # Enable mouse support
 set mouse
 
-# When neither the file’s name nor its first line give a clue,
+# When neither the file's name nor its first line give a clue,
 # try using libmagic to determine the applicable syntax
 set magic
 
