@@ -1,3 +1,6 @@
+using namespace System.Management.Automation
+using namespace System.Management.Automation.Language
+
 Set-StrictMode -Version Latest
 
 #Set-PSReadlineOption -HistorySaveStyle SaveNothing
@@ -34,11 +37,11 @@ function TabExpansion2 {
              The default is to use some heuristics to guess if relative or absolute is better.
 
        To customize your own custom options, pass a hashtable to CompleteInput, e.g.
-             return [System.Management.Automation.CommandCompletion]::CompleteInput($inputScript, $cursorColumn, @{ RelativeFilePaths=$false })
+             return [CommandCompletion]::CompleteInput($inputScript, $cursorColumn, @{ RelativeFilePaths=$false })
     #>
 
     [CmdletBinding(DefaultParameterSetName = 'ScriptInputSet')]
-    [OutputType([System.Management.Automation.CommandCompletion])]
+    [OutputType([CommandCompletion])]
     param(
         [Parameter(ParameterSetName = 'ScriptInputSet', Mandatory = $true, Position = 0)]
         [AllowEmptyString()]
@@ -48,13 +51,13 @@ function TabExpansion2 {
         [int] $cursorColumn = $inputScript.Length,
 
         [Parameter(ParameterSetName = 'AstInputSet', Mandatory = $true, Position = 0)]
-        [System.Management.Automation.Language.Ast] $ast,
+        [Ast] $ast,
 
         [Parameter(ParameterSetName = 'AstInputSet', Mandatory = $true, Position = 1)]
-        [System.Management.Automation.Language.Token[]] $tokens,
+        [Token[]] $tokens,
 
         [Parameter(ParameterSetName = 'AstInputSet', Mandatory = $true, Position = 2)]
-        [System.Management.Automation.Language.IScriptPosition] $positionOfCursor,
+        [IScriptPosition] $positionOfCursor,
 
         [Parameter(ParameterSetName = 'ScriptInputSet', Position = 2)]
         [Parameter(ParameterSetName = 'AstInputSet', Position = 3)]
@@ -63,23 +66,23 @@ function TabExpansion2 {
 
     End {
         $CompletionOutput = if ($psCmdlet.ParameterSetName -eq 'ScriptInputSet') {
-            [System.Management.Automation.CommandCompletion]::CompleteInput($inputScript, $cursorColumn, $options)
+            [CommandCompletion]::CompleteInput($inputScript, $cursorColumn, $options)
         } else {
-            [System.Management.Automation.CommandCompletion]::CompleteInput($ast, $tokens, $positionOfCursor, $options)
+            [CommandCompletion]::CompleteInput($ast, $tokens, $positionOfCursor, $options)
         }
         $shouldTrim = (
                 $inputScript -and
                 !$inputScript.Contains('.\') -and
                 $CompletionOutput.CompletionMatches.Count -gt 0 -and
-                $CompletionOutput.CompletionMatches[0].ResultType -eq [System.Management.Automation.CompletionResultType]::ProviderContainer -or
-                $CompletionOutput.CompletionMatches[0].ResultType -eq [System.Management.Automation.CompletionResultType]::ProviderItem)
+                $CompletionOutput.CompletionMatches[0].ResultType -eq [CompletionResultType]::ProviderContainer -or
+                $CompletionOutput.CompletionMatches[0].ResultType -eq [CompletionResultType]::ProviderItem)
         if ($shouldTrim) {
-            [System.Object[]]$NewCompletionList = foreach ($Item in $CompletionOutput.CompletionMatches) {
+            [Object[]]$NewCompletionList = foreach ($Item in $CompletionOutput.CompletionMatches) {
                 $ItemText = $Item.CompletionText.Replace('\', '/')
                 if ($ItemText.Contains('./')) {
                     $ItemText = $ItemText.Replace('./', '')
                 }
-                [System.Management.Automation.CompletionResult]::new(
+                [CompletionResult]::new(
                     $ItemText, $Item.ListItemText, $Item.ResultType, $Item.ToolTip)
             }
             $CompletionOutput.CompletionMatches = $NewCompletionList
@@ -88,3 +91,4 @@ function TabExpansion2 {
         return $CompletionOutput
     }
 }
+
