@@ -1,0 +1,88 @@
+{
+  // File indexing parses all files in the sidebar, and builds an index of
+  // their symbols. This is required for Goto Definition to work.
+  "index_files": true,
+  "light_color_scheme": "Celeste.sublime-color-scheme",
+
+  // Set to true to insert spaces when tab is pressed
+  "translate_tabs_to_spaces": true,
+
+  // If enabled, will highlight any line with a caret
+  "highlight_line": true,
+
+  // Valid values are "smooth", "phase", "blink" and "solid".
+  // Previous versions of Sublime Text used "smooth" by default.
+  "caret_style": "smooth",
+
+  // remember_workspace makes Sublime Text remember what workspace each window
+  // was in last. When set to false the OS left to determine which workspace
+  // a window is opened in. This doesn't work with Wayland.
+  "remember_workspace": false,
+
+  // Show the relative path to files in the title bar. This overrides
+  // show_full_path for files that are listed in the sidebar, however
+  // show_full_path is still used for other files.
+  "show_rel_path": true,
+
+  // Show the full path to files in the title bar. On Mac, this value is
+  // overridden in the platform specific settings, with a default value of false.
+  "show_full_path": false,
+
+  // Display file encoding in the status bar
+  "show_encoding": true,
+
+  // Display line endings in the status bar
+  "show_line_endings": true,
+
+  // Set to true to close windows as soon as the last file is closed, unless
+  // there's a folder open within the window.
+  // On Mac, this value is overridden in the platform specific settings, so
+  // you'll need to place this line in your user settings to override it.
+  "close_windows_when_empty": true,
+
+  // Set to false to disable scrolling past the end of the buffer.
+  // On Mac, this value is overridden in the platform specific settings, so
+  // you'll need to place this line in your user settings to override it.
+  // This setting may also be set to a number between 0.0 and 1.0 to specify
+  // how much scrolling past the end of the buffer should be allowed. 0.5
+  // scrolls halfway and 0.0 is the same as false.
+  "scroll_past_end": 0.3,
+
+  // Controls when white space is drawn. Any of the following options may be
+  // combined:
+  // - "selection": Draw white space under the current selection.
+  // - "leading": Draw any white space between the beginning of a line and the
+  //              first character.
+  // - "enclosed": Draw white space enclosed by other characters.
+  // - "trailing": Draw white space following the last character on a line.
+  // - "isolated": Draw white space on lines containing no other characters.
+  // - "all": All of the above, ie. always draw white space.
+  //
+  // These options may be further refined by appending any of the following
+  // separated by an underscore:
+  // - "none": Don't draw this kind of white space.
+  // - "tabs": Only draw tabs here.
+  // - "spaces": Only draw spaces here.
+  // - "mixed": Only draw white space that does not match the indentation style.
+  //            For example if "translate_tabs_to_spaces" is true only draw tabs.
+  // - "mixed_tabs": Like "mixed" but only draw tabs.
+  // - "mixed_spaces": Like "mixed" but only draw spaces.
+  // - "all": Draw both tabs and spaces. This is the default.
+  //
+  // Note that options are applied in sequence. So a later option may override
+  // an earlier one.
+  "draw_white_space": ["selection", "all_tabs"],
+
+  // Set to true to ensure the last line of the file ends in a newline
+  // character when saving
+  "ensure_newline_at_eof_on_save": false,
+
+  // Determines what character(s) are used to terminate each line in new files.
+  // Valid values are 'system' (whatever the OS uses), 'windows' (CRLF) and
+  // 'unix' (LF only).
+  "default_line_ending": "unix",
+
+  // Makes tabs with modified files more visible
+  "highlight_modified_tabs": true,
+}
+
