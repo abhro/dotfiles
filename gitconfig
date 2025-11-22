@@ -24,6 +24,7 @@
 [push]
 	autoSetupRemote = true
 [fetch]
+	all = true
 	prune = true
 [rebase]
 	autoStash = true
