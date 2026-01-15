@@ -67,7 +67,9 @@ else
 endif
 set guioptions+=a               " Turn on auto-select in visual mode
 set guioptions+=e               " Add tab pages when indicated with showtabline
+set guioptions+=k               " Keep window size
 set guioptions-=t               " Don't let menus be tear-off
+set guioptions-=T               " Turn off toolbar
 set splitright                  " Splitting vertically puts new window on the right
 set nobomb                      " Don't write a BOM (byte-order-mark) for files
 set viminfofile=~/.viminfo      " Set name of viminfo file
@@ -120,7 +122,7 @@ autocmd Filetype gitcommit setlocal spell textwidth=72
 
 set foldenable                      " Enable folding
 set foldlevelstart=10               " Open most folds by default
-"set foldmethod=indent " fold based on indent level
+"set foldmethod=indent              " fold based on indent level
 
 """ keymaps start here
 
