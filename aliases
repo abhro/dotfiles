@@ -3,7 +3,8 @@
 # protect and inform user
 alias cp='cp -iv' mv='mv -iv' rm='rm -iv' ln='ln -v'
 alias mkdir='mkdir -v' rmdir='rmdir -v'
-alias pgrep='pgrep -iaf' jobs='jobs -l' pkill='pkill -e'
+alias pgrep='pgrep -iaf' pkill='pkill -e'
+alias jobs='jobs -l'
 alias chmod='chmod -c' chown='chown -c' chgrp='chgrp -c'
 alias rename='rename -v'
 alias ln='ln -v'
@@ -11,17 +12,19 @@ alias ln='ln -v'
 # set up directory listing options
 alias ls='ls --group-directories-first --color -FNl'
 alias ll='ls -lh' la='ls -A' l='ls -CF'
-alias eza='eza --group-directories-first --icons --no-quotes --classify=auto -hG'
-alias tree='tree --dirsfirst -AFNh' diff='diff --color'
+alias eza='eza --group-directories-first --icons --no-quotes -hFG'
+alias tree='tree --dirsfirst -AFNh'
 
 # let sudo and xargs use aliases
 alias sudo='sudo ' xargs='xargs '
 
 # convenience
+alias diff='diff --color'
 alias gdb='gdb --quiet' valgrind='valgrind --quiet'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
+alias julia='julia --banner=short'
 alias serve='sudo python3 -m http.server 80'
 alias :q=exit cd..='cd ..' cd-='cd -'
 alias clip='xsel -bi'
