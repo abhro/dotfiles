@@ -1,0 +1,51 @@
+{
+    "chat.agent.enabled": false,
+    "chat.useAgentSkills": false,
+
+    "diffEditor.experimental.showMoves": true,
+    "editor.autoIndentOnPaste": true,
+    "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+    "editor.find.history": "never",
+    "editor.minimap.enabled": false,
+    "editor.scrollBeyondLastLine": false,
+    "editor.scrollbar.ignoreHorizontalScrollbarInContentHeight": true,
+    "editor.scrollbar.vertical": "visible",
+    "editor.trimWhitespaceOnDelete": true,
+
+    "explorer.excludeGitIgnore": true,
+    "window.autoDetectColorScheme": true,
+
+    "workbench.commandPalette.showAskInChat": false,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.tabSizing": "fixed",
+    "workbench.editor.tabSizingFixedMaxWidth": 200,
+    "workbench.editorLargeFileConfirmation": 32,
+    "workbench.preferredLightColorTheme": "Default Light+",
+    "workbench.settings.showAISearchToggle": false,
+    "extensions.experimental.issueQuickAccess": false,
+    "extensions.ignoreRecommendations": true,
+
+    "files.autoSave": "onFocusChange",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.exclude": { "**/*.aux": true, "**/*.pdf": true },
+
+    "git.blame.ignoreWhitespace": true,
+    "git.pruneOnFetch": true,
+    "git.pullBeforeCheckout": true,
+    "git.untrackedChanges": "separate",
+
+    "ipynb.experimental.serialization": false,
+    "mermaid-chat.enabled": false,
+    "scm.diffDecorationsIgnoreTrimWhitespace": "inherit",
+    "security.workspace.trust.untrustedFiles": "newWindow",
+    "telemetry.feedback.enabled": false,
+    "terminal.integrated.useWslProfiles": false,
+
+    "tinymist.lint.enabled": true,
+    "tinymist.preview.refresh": "onSave",
+    "tinymist.syntaxOnly": "onPowerSaving",
+    "update.showReleaseNotes": false,
+    "vim.vimrc.enable": true,
+}
