@@ -72,6 +72,7 @@ set guioptions-=t               " Don't let menus be tear-off
 set guioptions-=T               " Turn off toolbar
 set splitright                  " Splitting vertically puts new window on the right
 set nobomb                      " Don't write a BOM (byte-order-mark) for files
+set breakindent                 " When wrapping lines, keep indent level
 set viminfofile=~/.viminfo      " Set name of viminfo file
 if has('gui_running') 
   set columns=95 lines=28
