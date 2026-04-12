@@ -72,6 +72,8 @@ blocks:
         #leading_diamond: 
         #trailing_diamond: 
         template: ' {{ .HEAD }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }} '
+        # only show that there are worktree changes and staged changes, but not the counts
+        template: ' {{ .HEAD }}{{ if .Working.Changed }}  {{ end }}{{ if .Staging.Changed }}  {{ end }} '
         foreground: p:black
         background: p:green
         properties:
