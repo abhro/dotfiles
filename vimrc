@@ -1,9 +1,9 @@
 " VIM 8.0 vimrc file
 
-" configure vundle
+" Configure Vundle
 set nocompatible
 filetype off
-set shellslash
+set shellslash        " Use forward slash for filenames
 set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'dense-analysis/ale'               " Asynchronous lint engine (LSP)
@@ -38,6 +38,7 @@ call vundle#end()
 
 behave xterm                    " Behave like Xterm for mouse and selection
 filetype plugin indent on
+syntax on                       " Turn on syntax highlighting
 set autoread                    " If file changed outside vim, reload automatically
 set lazyredraw                  " Don't redraw while executing macros and commands
 set incsearch                   " Highlight matches as search pattern is typed
@@ -56,6 +57,8 @@ set matchtime=2                 " 1/10 s to show the matching paren for showmat
 set backupcopy=yes              " When saving, make a backup copy and overwrite the original
 set t_Co=256                    " Number of colors in terminal
 let g:solarized_termcolors=256
+
+set nowritebackup
 
 set background=light
 colorscheme badwolf
@@ -79,6 +82,7 @@ if has('gui_running')
   set columns=95 lines=28
 endif
 
+set display+=lastline
 set colorcolumn=80,92,120,+0    " Highlight the screen column at these values
 set textwidth=80                " Maximum width of text that is being inserted
 set autoindent                  " Copy indent from current line when starting a new line
@@ -94,6 +98,8 @@ set listchars=tab:>·,trail:·,nbsp:. " Spec for highlighting whitespace
 set wildmenu
 set wildmode=list:longest,full
 set wildignore=*.a,*.o,*.pyc,*.pyo,*.git " Don't search compiled files
+set wildignore+=*.svg
+set wildignore+=*.pdf
 
 set pastetoggle=<F3>            " F3 enters paste mode (solves indenting)
 
@@ -110,7 +116,7 @@ set backspace=indent,eol,start
 set laststatus=2                " Show statusline
 set tabpagemax=75               " Maximum number of tabs open at once
 
-" control line break / wrapping behavior
+" Control line break / wrapping behavior
 set linebreak                   " Do a visual wrap at 'breakat' character
 set breakat-=.
 set breakat-=-
@@ -122,9 +128,10 @@ set breakat-=:
 " make sure that commit messages wrap at 72 characters
 autocmd Filetype gitcommit setlocal spell textwidth=72
 
-set foldenable                      " Enable folding
-set foldlevelstart=10               " Open most folds by default
-"set foldmethod=indent              " fold based on indent level
+set foldenable                  " Enable folding
+set foldlevelstart=10           " Open most folds by default
+set fillchars=fold:\            " How to end fold line, trailing space after backslash required
+"set foldmethod=indent          " Fold based on indent level
 
 """ keymaps start here
 
@@ -181,8 +188,6 @@ function! SrtToVtt() " i like screwing with captions
   call StripTrailingSpace()
   call StripLeadingSpace()
 endfunction
-autocmd BufWrite *.py     :call StripTrailingSpace()
-autocmd BufWrite *.coffee :call StripTrailingSpace()
 
 " If file is read-only, turn off 'modifiable'.
 " See https://vi.stackexchange.com/questions/3455
@@ -190,7 +195,7 @@ autocmd BufRead * let &l:modifiable = !&readonly
 
 """" plugin configurations start here
 
-" NERDtree config
+" NERDtree configuration
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\.vim$', '\~$', '\.pyc$', '\.swp$', '\.bak$', '\.pyo$',
                    \'\.o$', '\.a$', '\.so$', '__pycache__', '\.dll$', '\.lib$']
@@ -205,9 +210,27 @@ let g:tagbar_type_julia = {
       \ 'kinds'     : ['t:struct', 'f:function', 'm:macro', 'c:const']
     \ }
 
+let g:tagbar_type_typst = {
+      \ 'ctagstype' : 'typst',
+      \ 'sro'       : '""',
+      \ 'kinds'     : ['f:function', 'c:chapter:0:1', 's:section:0:1', 'S:subsection:0:1', 't:subsubsection:0:1'],
+      \ 'kind2scope': {'c': 'chapter', 's': 'section', 'S': 'subsection', 't': 'subsubsection', 'f': 'function'},
+      \ 'scope2kind': {'chapter': 'c', 'section': 's', 'subsection': 'S', 'subsubsection': 't', 'function': 'f'}
+    \ }
+
 let fortran_do_enddo=1          " Indent Fortran do loops properly
 
-" make airline have that nice streamline
-" needs to have required powerline fonts installed
-" works just as well without it
+" Make airline have that nice streamline.
+" Needs to have required powerline fonts installed.
+" Works just as well without it.
 "let g:airline_powerline_fonts=1
+
+function! MyFoldText()
+  let numlines = v:foldend - v:foldstart + 1
+  let lines = printf('%' . len(line('$')) . 'd', numlines)
+  let line  = substitute(foldtext(), '^+-\+ *\d\+ lines: ', '', '')
+
+  return ' [' . lines . ' lines: ' . line . ']'
+endfunction
+
+set foldtext=MyFoldText()
