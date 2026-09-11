@@ -4,7 +4,7 @@
 import Pkg
 
 atreplinit() do repl
-    @eval using Revise, OhMyREPL
+    @eval using Revise
     redirect_stdio(stderr=devnull) do
         @eval using AbbreviatedStackTraces
     end
